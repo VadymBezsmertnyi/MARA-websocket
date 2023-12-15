@@ -1,6 +1,19 @@
 import { WebSocket, WebSocketServer } from "ws";
 import http from "http";
 import { uuid } from "uuidv4";
+import mongoose from "mongoose";
+
+const db =
+  "mongodb+srv://admin:pass@cluster0.xva1z4o.mongodb.net/motosect?retryWrites=true&w=majority";
+
+mongoose
+  .connect(db)
+  .then(() => {
+    console.log("Connect to db");
+  })
+  .catch((error: Error) => {
+    console.log(error);
+  });
 
 const server = http.createServer();
 const wsServer = new WebSocketServer({ server });
