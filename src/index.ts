@@ -2,6 +2,8 @@ import { WebSocket, WebSocketServer } from "ws";
 import http from "http";
 import { uuid } from "uuidv4";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const db = `mongodb+srv://admin:${process.env.DB_PASSWORD}@cluster0.xva1z4o.mongodb.net/motosect?retryWrites=true&w=majority`;
 
